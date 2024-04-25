@@ -162,3 +162,5 @@ binanalyzer/app.ipynb
 binanalyzer/app.py
 binanalyzer/src/binanalyzer/app_service.py
 src/binanalyzer/app_service.py
+src/binanalyzer/app.ipynb
+src/binanalyzer/binanalyzer_service_TEMP.py
