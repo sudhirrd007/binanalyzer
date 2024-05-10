@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 BASE_URL = "https://api.binance.com"
 
 
-class BinanceAPIWrapper:
+class BinanceWrapper:
     def __init__(self):
         pass
 

@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  binanalyzer_database:
+    build:
+      context: .
+      dockerfile: binanalyzer_database/Dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - ./binanalyzer_database/main:/app/main
+
+  web:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+    # image: nginx:latest
+    ports:
+      - "8001:80"

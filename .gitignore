@@ -164,3 +164,5 @@ binanalyzer/src/binanalyzer/app_service.py
 src/binanalyzer/app_service.py
 src/binanalyzer/app.ipynb
 src/binanalyzer/binanalyzer_service_TEMP.py
+src/binanalyzer/main/data/credential.yml
+src/binanalyzer_database/main/data/credential.yml
