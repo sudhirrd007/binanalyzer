@@ -8,6 +8,10 @@ WORKDIR /app
 COPY ./binanalyzer_database/main/ ./main/
 RUN ls -lt
 
+# copy config files
+COPY ./binanalyzer_database/config/ ./config/
+RUN ls -lt
+
 # copy the dependencies file to the working directory
 COPY ./binanalyzer_database/requirements.txt .
 RUN ls -lt
@@ -21,5 +25,5 @@ EXPOSE 80
 # Define environment variable
 ENV NAME World
 
-# Run app.py when the container launches
-CMD ["uvicorn", "main.binanalyzer_database_service:app", "--host", "0.0.0.0", "--port", "80", "--reload"]
+# command to run on container start
+CMD ["gunicorn", "main.binanalyzer_database_service:app", "-c", "config/gunicorn_config.py"]

@@ -135,17 +135,6 @@ class DBWrapper:
             rows = [dict(row) for row in rows]
         return rows
 
-    def fetch_all_transactions_df(self):
-        with sqlite3.connect(BINANCE_DB_PATH) as connection:
-            connection.row_factory = sqlite3.Row
-            df = pd.read_sql_query(
-                f"""SELECT * FROM {TABLE_NAME} ORDER BY timestamp ASC""",
-                connection,
-            )
-            # trans_list = df.to_dict('records')
-            # return trans_list
-        return df
-
     # Endpoint
     def filter_transactions(self, filter_dict: dict):
         if not filter_dict:
@@ -156,7 +145,7 @@ class DBWrapper:
             + TABLE_NAME
             + " WHERE "
             + " AND ".join([f"{key} = '{value}'" for key, value in filter_dict.items()])
-            + " ORDER BY timestamp ASC"
+            + " COLLATE NOCASE ORDER BY timestamp ASC"
         )
 
         with sqlite3.connect(BINANCE_DB_PATH) as connection:
@@ -166,23 +155,6 @@ class DBWrapper:
             rows = cursor.fetchall()
             rows = [dict(row) for row in rows]
         return rows
-
-    def filter_transactions_df(self, filter_dict: dict):
-        if not filter_dict:
-            return self.fetch_all_transactions()
-
-        select_query = (
-            "SELECT * FROM "
-            + TABLE_NAME
-            + " WHERE "
-            + " AND ".join([f"{key} = '{value}'" for key, value in filter_dict.items()])
-            + " ORDER BY timestamp ASC"
-        )
-
-        with sqlite3.connect(BINANCE_DB_PATH) as connection:
-            connection.row_factory = sqlite3.Row
-            df = pd.read_sql_query(select_query, connection)
-        return df
 
     # Endpoint
     def fetch_row_count(self):
@@ -199,12 +171,16 @@ def insert_transcation_from_list(transaction_list: str):
     for trans_dict in transaction_list:
         response = DBWrapper().insert_single_transaction(trans_dict)
         if response == "success":
-            logging.info(green_message(f'Successful: OrderId: {trans_dict["orderId"]}'))
+            logging.info(
+                green_message("Successful: ") + f'order_id: {trans_dict["order_id"]}'
+            )
             success += 1
         elif response == "duplicated":
             duplicated += 1
         else:
-            logging.info(red_message(f'Failed: OrderId: {trans_dict["orderId"]}'))
+            logging.info(
+                red_message("Failed: ") + f'order_id: {trans_dict["order_id"]}'
+            )
             failed += 1
     logging.info(
         "Total: %s, Success: %s, Duplicated: %s, Failed: %s",

@@ -2,18 +2,45 @@ version: '3.8'
 
 services:
   binanalyzer_database:
+    image: binanalyzer_database:latest
     build:
       context: .
       dockerfile: binanalyzer_database/Dockerfile
-    ports:
-      - "8000:80"
+    environment:
+      - ENVIRONMENT=local
+      - DEBUG=False
     volumes:
       - ./binanalyzer_database/main:/app/main
+      - ./binanalyzer_database/config:/app/config
+    networks:
+      - binanalyzer-network
+
+  # backend:
+  #   image: backend:latest
+  #   build:
+  #     context: .
+  #     dockerfile: backend/Dockerfile
+  #   environment:
+  #     - ENVIRONMENT=local
+  #     - DEBUG=False
+  #   volumes:
+  #     - ./backend/main:/app/main
+  #     - ./backend/config:/app/config
+  #   networks:
+  #     - binanalyzer-network
+    # ports:
+    #   - "9090:9090"
 
   web:
+    image: web:latest
     build:
       context: .
       dockerfile: web/Dockerfile
-    # image: nginx:latest
     ports:
-      - "8001:80"
+      - "8081:8080"
+    networks:
+      - binanalyzer-network
+
+networks:
+  binanalyzer-network:
+    driver: bridge
