@@ -24,7 +24,7 @@ class BinanceWrapper:
         """Get your total no of coins in Binance Spot, Funding, Flexible Earn Wallet"""
         spot = self.get_no_of_coin_from_spot_wallet(coin)
         funding = self.get_no_of_coin_from_funding_wallet(coin)
-        flexible_earn = self.get_no_of_coin_from_flexible_earn_wallet(coin)
+        flexible_earn = self.get_no_of_coin_from_earn_wallet(coin)
         total_coins = spot + funding + flexible_earn
         return total_coins
 

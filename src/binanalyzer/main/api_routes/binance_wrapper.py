@@ -1,4 +1,4 @@
-from binanalyzer.main.binance_wrapper.binance_wrapper import BinanceWrapper
+from main.binance_wrapper.binance_wrapper import BinanceWrapper
 
 from typing import Optional, List, Any
 import logging
@@ -8,7 +8,7 @@ from typing import Annotated
 
 logging.basicConfig(level=logging.INFO)
 
-binance_api_wrapper_obj = BinanceAPIWrapper()
+binance_api_wrapper_obj = BinanceWrapper()
 
 router = APIRouter()
 

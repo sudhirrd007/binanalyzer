@@ -1,6 +1,21 @@
 version: '3.8'
 
 services:
+  binanalyzer:
+    image: binanalyzer:latest
+    build:
+      context: .
+      dockerfile: binanalyzer/Dockerfile
+    environment:
+      - ENVIRONMENT=local
+      - DEBUG=False
+    volumes:
+      - ./binanalyzer/main:/app/main
+    networks:
+      - binanalyzer-network
+    ports:
+      - "8000:8000"
+
   binanalyzer_database:
     image: binanalyzer_database:latest
     build:
@@ -14,22 +29,6 @@ services:
       - ./binanalyzer_database/config:/app/config
     networks:
       - binanalyzer-network
-
-  # backend:
-  #   image: backend:latest
-  #   build:
-  #     context: .
-  #     dockerfile: backend/Dockerfile
-  #   environment:
-  #     - ENVIRONMENT=local
-  #     - DEBUG=False
-  #   volumes:
-  #     - ./backend/main:/app/main
-  #     - ./backend/config:/app/config
-  #   networks:
-  #     - binanalyzer-network
-    # ports:
-    #   - "9090:9090"
 
   web:
     image: web:latest
