@@ -10,8 +10,8 @@ app.include_router(binance_router)
 
 @app.get("/hello")
 async def get_coinpair_price():
-    return "Hello from Binanalyzer!"
+    return "Hello from Binance API!"
 
 
 if __name__ == "__main__":
-    uvicorn.run("binanalyzer_service:app", host="0.0.0.0", port=9000, reload=True)
+    uvicorn.run("binance_api_service:app", host="0.0.0.0", port=8000, reload=True)

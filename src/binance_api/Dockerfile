@@ -5,18 +5,18 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # copy the content of the local src directory to the working directory
-COPY ./binanalyzer/main/ ./main/
+COPY ./binance_api/main/ ./main/
 RUN ls -lt
 
 # copy the dependencies file to the working directory
-COPY ./binanalyzer/requirements.txt .
+COPY ./binance_api/requirements.txt .
 RUN ls -lt
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 80 available to the world outside this container
-EXPOSE 7000
+EXPOSE 8000
 
 # Run app.py when the container launches
-CMD ["uvicorn", "main.binanalyzer_service:app", "--host", "0.0.0.0", "--port", "7000", "--reload"]
+CMD ["uvicorn", "main.binance_api_service:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

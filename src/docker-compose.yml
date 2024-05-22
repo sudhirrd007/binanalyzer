@@ -14,6 +14,21 @@ services:
     networks:
       - binanalyzer-network
     ports:
+      - "7000:7000"
+
+  binance_api:
+    image: binance_api:latest
+    build:
+      context: .
+      dockerfile: binance_api/Dockerfile
+    environment:
+      - ENVIRONMENT=local
+      - DEBUG=False
+    volumes:
+      - ./binance_api/main:/app/main
+    networks:
+      - binanalyzer-network
+    ports:
       - "8000:8000"
 
   binanalyzer_database:
