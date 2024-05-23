@@ -16,7 +16,8 @@ router = APIRouter()
 # Coin Pair Price -----------------------------------------------------------------------------------------------
 class CoinPriceResponse(BaseModel):
     isSuccess: bool
-    coinpair_price: dict[str, float]
+    price: Optional[float] = None
+    price_list: Optional[List[float]] = None
 
 
 class CoinPriceRequest(BaseModel):
@@ -55,6 +56,7 @@ async def get_coinpair_price(
     coin_name: str = Query(None, title="Coin Name"),
     coin_list: List[str] = Query(None, title="List of Coin Names"),
 ):
+    logging.info(f"coin_name: {coin_name}, coin_list: {coin_list}")
     try:
         request = CoinPriceRequest(coin_name=coin_name, coin_list=coin_list)
     except Exception as e:
@@ -63,15 +65,13 @@ async def get_coinpair_price(
     try:
         if request.coin_name:
             price = binance_api_wrapper_obj.get_coinpair_price(request.coin_name)
-            return CoinPriceResponse(
-                isSuccess=True, coinpair_price={request.coin_name: price}
-            )
+            return CoinPriceResponse(isSuccess=True, price=price)
         elif request.coin_list:
-            prices_dict = {
-                coin_name: binance_api_wrapper_obj.get_coinpair_price(coin_name)
-                for coin_name in request.coin_list
-            }
-            return CoinPriceResponse(isSuccess=True, coinpair_price=prices_dict)
+            price_list = [
+                binance_api_wrapper_obj.get_coinpair_price(coin_name_)
+                for coin_name_ in request.coin_list
+            ]
+            return CoinPriceResponse(isSuccess=True, price_list=price_list)
         else:
             raise ValueError("Either coin_name or coin_list must be provided.")
     except Exception as e:

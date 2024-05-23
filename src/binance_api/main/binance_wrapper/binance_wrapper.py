@@ -2,6 +2,7 @@ import os
 import hmac
 import hashlib
 import requests
+import logging
 from binance.spot import Spot
 from datetime import datetime, timedelta
 
@@ -212,6 +213,7 @@ def get_timestamp_offset():
 
 
 def generate_signature(query_string):
+    logging.info(f"api secret: {os.getenv('BINANCE_API_SECRET')}")
     m = hmac.new(
         os.getenv("BINANCE_API_SECRET").encode("utf-8"),
         query_string.encode("utf-8"),

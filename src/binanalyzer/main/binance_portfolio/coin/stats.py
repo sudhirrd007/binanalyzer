@@ -3,17 +3,17 @@ import logging
 from pydantic import BaseModel, field_validator, ValidationError, validate_call
 
 
-def get_response(method="get", endpoint_str="", params={}, headers={}):
-    url = "http://binance_api:8000/"
-    if endpoint_str != "":
-        url += endpoint_str
+def get_response(method="get", endpoint_method="", params={}, headers={}):
+    # url = "http://binance_api:8000/"
+    url = "http://localhost:8000/"
+    if endpoint_method != "":
+        url += endpoint_method
 
     if not headers:
         headers = {"accept": "application/json"}
 
     if not params:
         params = {}
-
     if method == "get":
         response = requests.get(url, headers=headers, params=params)
     elif method == "post":
@@ -46,12 +46,9 @@ class Stats(BaseModel):
         self.precision = calculate_precision(self.buy_price_normal)
 
     def get_coin_price(self):
-        logging.info(
-            "Getting Coin Price for %s - %s",
-            self.symbol,
-            get_response(method="get", params={"coin_name": "btc"}),
-        )
-        return get_response(method="get", params={"coin_name": "btc"})
+        return get_response(
+            method="get", endpoint_method="coinpair_price", params={"coin_name": "btc"}
+        )["price"]
 
 
 def calculate_precision(value):

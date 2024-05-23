@@ -168,3 +168,4 @@ src/binanalyzer/main/data/credential.yml
 src/binanalyzer_database/main/data/credential.yml
 API_TESTS.ipynb
 TEST_PYTHON.py
+src/TEMP-docker-compose.yml

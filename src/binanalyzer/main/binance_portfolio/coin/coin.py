@@ -2,7 +2,7 @@ import logging
 from pydantic import BaseModel, field_validator, ValidationError, validate_call
 from stats import Stats
 from wallet import Wallet
-from transactions import Transactions
+# from transactions import Transactions
 
 logger = logging.getLogger("Coin")
 logging.basicConfig(level=logging.INFO)
@@ -12,19 +12,17 @@ class Coin(BaseModel):
     symbol: str
     stats_obj: Stats | None = None
     wallet_obj: Wallet | None = None
-    transactions_obj: Transactions | None = None
+    # transactions_obj: Transactions | None = None
 
     def __init__(self, **data):
         super().__init__(**data)
         self.stats_obj = Stats(symbol=self.symbol)
-        # self.wallet_obj = Wallet(symbol=self.symbol)
+        self.wallet_obj = Wallet(symbol=self.symbol)
         # self.transactions_obj = Transactions(symbol=self.symbol)
 
     @field_validator("symbol")
     @classmethod
     def validate_symbol(cls, value):
-        if value not in ["BTC", "ETH"]:
-            raise ValueError("Symbol error!")
         return value
 
     class Config:
