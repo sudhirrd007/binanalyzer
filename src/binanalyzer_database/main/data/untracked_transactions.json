@@ -10,12 +10,12 @@
         "day": 28,
         "time": "12:54:23",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 17.06068124,
         "conversion_ratio": 0.280072,
         "usdt_equivalent": 4.77821997,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -29,12 +29,12 @@
         "day": 28,
         "time": "12:58:15",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 1.13603994,
         "conversion_ratio": 0.621215,
         "usdt_equivalent": 0.7057247,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -48,12 +48,12 @@
         "day": 28,
         "time": "12:59:09",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.33439606,
         "conversion_ratio": 38.9322,
         "usdt_equivalent": 13.01878967,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -67,12 +67,12 @@
         "day": 28,
         "time": "12:59:56",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 82.51635217,
         "conversion_ratio": 0.625678,
         "usdt_equivalent": 51.62862755,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -86,12 +86,12 @@
         "day": 28,
         "time": "16:42:38",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.32771067,
         "conversion_ratio": 73.5305,
         "usdt_equivalent": 24.09672353,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -105,12 +105,12 @@
         "day": 28,
         "time": "16:45:40",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 4.14854484,
         "conversion_ratio": 0.680064,
         "usdt_equivalent": 2.82127408,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -124,12 +124,12 @@
         "day": 28,
         "time": "16:47:01",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 54.30842586,
         "conversion_ratio": 0.141076,
         "usdt_equivalent": 7.66160834,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -143,12 +143,12 @@
         "day": 5,
         "time": "11:58:37",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.01356963,
         "conversion_ratio": 0.0002713925149944,
         "usdt_equivalent": 50.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -162,12 +162,12 @@
         "day": 5,
         "time": "11:59:38",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.01702194,
         "conversion_ratio": 0.0002704098602251,
         "usdt_equivalent": 62.94868724,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -181,12 +181,12 @@
         "day": 10,
         "time": "23:31:49",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00066449,
         "conversion_ratio": 68054.9,
         "usdt_equivalent": 45.22183127,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -200,12 +200,12 @@
         "day": 15,
         "time": "14:55:06",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00710611,
         "conversion_ratio": 1.42122168216e-05,
         "usdt_equivalent": 500.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -219,12 +219,12 @@
         "day": 15,
         "time": "14:56:38",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.13188594,
         "conversion_ratio": 0.0002637722063226,
         "usdt_equivalent": 500.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -238,12 +238,12 @@
         "day": 16,
         "time": "15:10:02",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 1.576963,
         "conversion_ratio": 184.616,
         "usdt_equivalent": 291.13199577,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -257,12 +257,12 @@
         "day": 17,
         "time": "10:26:35",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 3624621.87,
         "conversion_ratio": 36246.1986799,
         "usdt_equivalent": 100.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -276,12 +276,12 @@
         "day": 17,
         "time": "11:56:28",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 644.13715832,
         "conversion_ratio": 6.44138979426201,
         "usdt_equivalent": 100.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -295,12 +295,12 @@
         "day": 19,
         "time": "10:44:19",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.02143744,
         "conversion_ratio": 0.000306248698443,
         "usdt_equivalent": 70.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -314,12 +314,12 @@
         "day": 19,
         "time": "10:44:44",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00110403,
         "conversion_ratio": 1.57718258412e-05,
         "usdt_equivalent": 70.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -333,12 +333,12 @@
         "day": 19,
         "time": "10:45:55",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.33181198,
         "conversion_ratio": 0.0055302087653809,
         "usdt_equivalent": 60.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -352,12 +352,12 @@
         "day": 20,
         "time": "10:40:28",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00077761,
         "conversion_ratio": 1.55521479071e-05,
         "usdt_equivalent": 50.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -371,12 +371,12 @@
         "day": 20,
         "time": "10:40:40",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.01484385,
         "conversion_ratio": 0.0002968768554803,
         "usdt_equivalent": 50.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -390,12 +390,12 @@
         "day": 21,
         "time": "11:10:59",
         "order_status": "process",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 6.0,
         "conversion_ratio": 0.18,
         "usdt_equivalent": 1.08,
         "trade_type": "limit",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -409,12 +409,12 @@
         "day": 21,
         "time": "11:23:41",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.64947186,
         "conversion_ratio": 6.494729526988849,
         "usdt_equivalent": 0.1,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -428,12 +428,12 @@
         "day": 21,
         "time": "11:42:45",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.06427978,
         "conversion_ratio": 6.427974545220801,
         "usdt_equivalent": 0.01,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -447,12 +447,12 @@
         "day": 23,
         "time": "00:55:12",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 681.82817808,
         "conversion_ratio": 0.159305,
         "usdt_equivalent": 108.61897607,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -466,12 +466,12 @@
         "day": 25,
         "time": "10:34:15",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.01496888,
         "conversion_ratio": 68746.5,
         "usdt_equivalent": 1029.05870855,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -485,12 +485,12 @@
         "day": 26,
         "time": "02:23:48",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.33186887,
         "conversion_ratio": 193.444,
         "usdt_equivalent": 64.19820057,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -504,12 +504,12 @@
         "day": 1,
         "time": "02:00:21",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.1720601,
         "conversion_ratio": 0.0017206017976848,
         "usdt_equivalent": 100.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -523,12 +523,12 @@
         "day": 1,
         "time": "02:00:54",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.05678332,
         "conversion_ratio": 0.0002839166874872,
         "usdt_equivalent": 200.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -542,12 +542,12 @@
         "day": 1,
         "time": "02:06:02",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00358713,
         "conversion_ratio": 1.43485403947e-05,
         "usdt_equivalent": 250.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -561,12 +561,12 @@
         "day": 1,
         "time": "02:06:51",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 5212954.29,
         "conversion_ratio": 34752.9931015,
         "usdt_equivalent": 150.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -580,12 +580,12 @@
         "day": 1,
         "time": "12:52:50",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.05772203,
         "conversion_ratio": 0.0002886102837616,
         "usdt_equivalent": 200.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -599,12 +599,12 @@
         "day": 1,
         "time": "12:53:26",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00144976,
         "conversion_ratio": 1.44976071699e-05,
         "usdt_equivalent": 100.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -618,12 +618,12 @@
         "day": 1,
         "time": "12:54:35",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.17349387,
         "conversion_ratio": 0.00173493942459,
         "usdt_equivalent": 100.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -637,12 +637,12 @@
         "day": 1,
         "time": "13:07:40",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.2628563,
         "conversion_ratio": 0.0052571260343395,
         "usdt_equivalent": 50.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -656,12 +656,12 @@
         "day": 2,
         "time": "00:54:52",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.02967905,
         "conversion_ratio": 0.0002967905074524,
         "usdt_equivalent": 100.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -675,12 +675,12 @@
         "day": 2,
         "time": "00:55:42",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 529.23081912,
         "conversion_ratio": 5.292321370922928,
         "usdt_equivalent": 100.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -694,12 +694,12 @@
         "day": 2,
         "time": "10:10:08",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.03036446,
         "conversion_ratio": 0.0003036449540282,
         "usdt_equivalent": 100.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -713,12 +713,12 @@
         "day": 2,
         "time": "10:10:38",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00152291,
         "conversion_ratio": 1.52291376044e-05,
         "usdt_equivalent": 100.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -732,12 +732,12 @@
         "day": 2,
         "time": "10:12:22",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 534.51699479,
         "conversion_ratio": 5.345163962904562,
         "usdt_equivalent": 100.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -751,12 +751,12 @@
         "day": 2,
         "time": "10:13:58",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.55102111,
         "conversion_ratio": 0.0055102187005802,
         "usdt_equivalent": 100.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -770,12 +770,12 @@
         "day": 2,
         "time": "10:37:03",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.02258151,
         "conversion_ratio": 0.0003010869237949,
         "usdt_equivalent": 75.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -789,12 +789,12 @@
         "day": 3,
         "time": "10:03:25",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.01505283,
         "conversion_ratio": 1.50528278995e-05,
         "usdt_equivalent": 1000.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -808,12 +808,12 @@
         "day": 3,
         "time": "19:43:41",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 73.22266467,
         "conversion_ratio": 5.632501788319318,
         "usdt_equivalent": 13.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -827,12 +827,12 @@
         "day": 8,
         "time": "12:34:08",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00712006,
         "conversion_ratio": 71318.2,
         "usdt_equivalent": 507.78956265,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -846,12 +846,12 @@
         "day": 8,
         "time": "20:46:38",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.25,
         "conversion_ratio": 3682.75,
         "usdt_equivalent": 920.68683961,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -865,12 +865,12 @@
         "day": 10,
         "time": "10:13:17",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.07213943,
         "conversion_ratio": 0.000288557816887,
         "usdt_equivalent": 250.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -884,12 +884,12 @@
         "day": 10,
         "time": "10:13:27",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00365679,
         "conversion_ratio": 1.46271538484e-05,
         "usdt_equivalent": 250.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -903,12 +903,12 @@
         "day": 10,
         "time": "10:13:37",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 1339.28843896,
         "conversion_ratio": 5.35716198986425,
         "usdt_equivalent": 250.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -922,12 +922,12 @@
         "day": 10,
         "time": "10:13:49",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 1.5002222,
         "conversion_ratio": 0.0060008881314435,
         "usdt_equivalent": 250.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -941,12 +941,12 @@
         "day": 10,
         "time": "18:37:59",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00365685,
         "conversion_ratio": 70585.2,
         "usdt_equivalent": 258.11960634,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -960,12 +960,12 @@
         "day": 10,
         "time": "18:40:33",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 1339.28843896,
         "conversion_ratio": 0.200409,
         "usdt_equivalent": 268.40611599,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -979,12 +979,12 @@
         "day": 10,
         "time": "18:43:11",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.39398219,
         "conversion_ratio": 606.217,
         "usdt_equivalent": 238.83865419,
         "trade_type": "market",
-        "buy_sell": 0,
+        "buy_sell": false,
         "miscellaneous": ""
     },
     {
@@ -998,12 +998,12 @@
         "day": 12,
         "time": "15:56:45",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00444982,
         "conversion_ratio": 1.48327239556e-05,
         "usdt_equivalent": 300.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1017,12 +1017,12 @@
         "day": 12,
         "time": "15:56:54",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.09284354,
         "conversion_ratio": 0.000309478714054,
         "usdt_equivalent": 300.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1036,12 +1036,12 @@
         "day": 12,
         "time": "15:57:03",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 1757.55427731,
         "conversion_ratio": 5.858505378107937,
         "usdt_equivalent": 300.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1055,12 +1055,12 @@
         "day": 12,
         "time": "15:57:30",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 1.98726011,
         "conversion_ratio": 0.0066241835693751,
         "usdt_equivalent": 300.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1074,12 +1074,12 @@
         "day": 12,
         "time": "15:58:35",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 39.17792851,
         "conversion_ratio": 0.7835578226495225,
         "usdt_equivalent": 50.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1093,12 +1093,12 @@
         "day": 13,
         "time": "13:35:59",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 614.89439414,
         "conversion_ratio": 6.148927012236365,
         "usdt_equivalent": 100.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1112,12 +1112,12 @@
         "day": 13,
         "time": "19:38:54",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00108015,
         "conversion_ratio": 1.5430717621e-05,
         "usdt_equivalent": 70.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1131,12 +1131,12 @@
         "day": 13,
         "time": "19:39:10",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.02624921,
         "conversion_ratio": 0.0003281152078118,
         "usdt_equivalent": 80.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1150,12 +1150,12 @@
         "day": 16,
         "time": "02:35:07",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00079032,
         "conversion_ratio": 1.58063532056e-05,
         "usdt_equivalent": 50.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1169,12 +1169,12 @@
         "day": 17,
         "time": "09:33:01",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00112152,
         "conversion_ratio": 1.60217639642e-05,
         "usdt_equivalent": 70.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1188,12 +1188,12 @@
         "day": 17,
         "time": "19:41:58",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00081243,
         "conversion_ratio": 1.62486432383e-05,
         "usdt_equivalent": 50.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1207,12 +1207,12 @@
         "day": 17,
         "time": "19:42:10",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00667302,
         "conversion_ratio": 0.0003336514143483,
         "usdt_equivalent": 20.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1226,12 +1226,12 @@
         "day": 17,
         "time": "19:43:19",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.07465556,
         "conversion_ratio": 0.0074655836593305,
         "usdt_equivalent": 10.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1245,12 +1245,12 @@
         "day": 17,
         "time": "19:43:30",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 67.08539523,
         "conversion_ratio": 6.708527880641872,
         "usdt_equivalent": 10.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1264,12 +1264,12 @@
         "day": 17,
         "time": "19:43:43",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 894475.92,
         "conversion_ratio": 44723.7192245,
         "usdt_equivalent": 20.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     },
     {
@@ -1283,12 +1283,12 @@
         "day": 18,
         "time": "11:49:27",
         "order_status": "success",
-        "automatically_added": 0,
+        "automatically_added": false,
         "coin_amount": 0.00078336,
         "conversion_ratio": 1.56672771682e-05,
         "usdt_equivalent": 50.0,
         "trade_type": "market",
-        "buy_sell": 1,
+        "buy_sell": true,
         "miscellaneous": ""
     }
 ]

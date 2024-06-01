@@ -170,3 +170,4 @@ API_TESTS.ipynb
 TEST_PYTHON.py
 src/TEMP-docker-compose.yml
 src/binanalyzer_database_temp/main/data/credential.yml
+src/app_binanalyzer_database.py

@@ -1,60 +1,106 @@
 version: '3.8'
 
+name: binanalyzer
+
 services:
-  binanalyzer:
-    image: binanalyzer:latest
-    build:
-      context: .
-      dockerfile: binanalyzer/Dockerfile
-    environment:
-      - ENVIRONMENT=local
-      - DEBUG=False
-    volumes:
-      - ./binanalyzer/main:/app/main
-    networks:
-      - binanalyzer-network
-    ports:
-      - "7000:7000"
+  # binanalyzer:
+  #   image: binanalyzer:latest
+  #   build:
+  #     context: .
+  #     dockerfile: binanalyzer/Dockerfile
+  #   environment:
+  #     - ENVIRONMENT=local
+  #     - DEBUG=False
+  #   volumes:
+  #     - ./binanalyzer/main:/app/main
+  #   networks:
+  #     - binanalyzer-network
+  #   ports:
+  #     - "7000:7000"
 
-  binance_api:
-    image: binance_api:latest
-    build:
-      context: .
-      dockerfile: binance_api/Dockerfile
-    environment:
-      - ENVIRONMENT=local
-      - DEBUG=False
-    volumes:
-      - ./binance_api/main:/app/main
-    networks:
-      - binanalyzer-network
-    ports:
-      - "8000:8000"
+  # binance_api:
+  #   image: binance_api:latest
+  #   build:
+  #     context: .
+  #     dockerfile: binance_api/Dockerfile
+  #   environment:
+  #     - ENVIRONMENT=local
+  #     - DEBUG=False
+  #   volumes:
+  #     - ./binance_api/main:/app/main
+  #   networks:
+  #     - binanalyzer-network
+  #   ports:
+  #     - "8000:8000"
 
-  binanalyzer_database:
-    image: binanalyzer_database:latest
+  # binanalyzer_database:
+  #   image: binanalyzer_database:latest
+  #   build:
+  #     context: .
+  #     dockerfile: binanalyzer_database/Dockerfile
+  #   environment:
+  #     - ENVIRONMENT=local
+  #     - DEBUG=False
+  #   volumes:
+  #     - ./binanalyzer_database/main:/app/main
+  #     - ./binanalyzer_database/config:/app/config
+  #   networks:
+  #     - binanalyzer-network
+
+  # binanalyzer_database:
+  #   image: binanalyzer_database:latest
+  #   build:
+  #     context: .
+  #     dockerfile: binanalyzer_database_temp/Dockerfile
+  #   container_name: binanalyzer_database
+  #   environment:
+  #     - ENVIRONMENT=local
+  #     - DEBUG=False
+  #     - MYSQL_HOST=mysql
+  #     - MYSQL_PORT=3306
+  #     - MYSQL_USER=sudhir
+  #     - MYSQL_PASSWORD=123000
+  #     - MYSQL_DATABASE=binanalyzer_database
+  #   volumes:
+  #     - ./binanalyzer_database_temp/main:/app/main
+  #     - ./binanalyzer_database_temp/config:/app/config
+  #   depends_on:
+  #     - mysql
+  #   networks:
+  #     - binanalyzer-network
+
+  mysql:
+    image: mysql:latest
     build:
       context: .
-      dockerfile: binanalyzer_database/Dockerfile
+      dockerfile: mysql/Dockerfile
+    container_name: mysql
     environment:
-      - ENVIRONMENT=local
-      - DEBUG=False
+      MYSQL_ROOT_PASSWORD: 123000
+      MYSQL_DATABASE: binanalyzer_database
+      MYSQL_USER: sudhir
+      MYSQL_PASSWORD: 123000
     volumes:
-      - ./binanalyzer_database/main:/app/main
-      - ./binanalyzer_database/config:/app/config
+      - mysql_database:/var/lib/mysql
+      # - ./mysql/mysql_init.sql:/docker-entrypoint-initdb.d/mysql_init.sql
+    ports:
+      - "3307:3306"
     networks:
       - binanalyzer-network
 
-  web:
-    image: web:latest
-    build:
-      context: .
-      dockerfile: web/Dockerfile
-    ports:
-      - "8081:8080"
-    networks:
-      - binanalyzer-network
+  # web:
+  #   image: web:latest
+  #   build:
+  #     context: .
+  #     dockerfile: web/Dockerfile
+  #   ports:
+  #     - "8081:8080"
+  #   networks:
+  #     - binanalyzer-network
 
 networks:
   binanalyzer-network:
     driver: bridge
+
+volumes:
+  mysql_database:

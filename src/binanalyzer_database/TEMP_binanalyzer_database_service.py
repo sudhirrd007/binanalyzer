@@ -58,7 +58,7 @@ def test_db_connection():
 
 def main():
     """Main method to start the app"""
-    app.run(debug=True)
+    app.run(debug=True, port=8081)
 
 
 if (__name__) == "__main__":

@@ -12,12 +12,12 @@ CREATE TABLE IF NOT EXISTS binance_transactions (
     day INT,
     time VARCHAR(255),
     order_status VARCHAR(255) NOT NULL,
-    automatically_added TINYINT(1) CHECK (automatically_added IN (0, 1)),
+    automatically_added BOOLEAN,
     coin_amount DOUBLE NOT NULL,
     conversion_ratio DOUBLE NOT NULL,
     usdt_equivalent DOUBLE NOT NULL,
     trade_type VARCHAR(255) NOT NULL,
-    buy_sell TINYINT(1) CHECK (buy_sell IN (0, 1)),
+    buy_sell BOOLEAN,
     miscellaneous TEXT
 );
 
@@ -33,14 +33,12 @@ CREATE TABLE IF NOT EXISTS spot_wallet (
 );
 
 -- Create trigger to calculate total_coins before insertion
-DELIMITER //
-CREATE TRIGGER before_insert_spot_wallet
-BEFORE INSERT ON spot_wallet
-FOR EACH ROW
-BEGIN
-    SET NEW.total_coins = NEW.free_coins + NEW.locked_coins + NEW.freeze_coins + NEW.withdrawing_coins + NEW.ipoable_coins;
-END //
-DELIMITER ;
+-- CREATE TRIGGER before_insert_spot_wallet
+-- BEFORE INSERT ON spot_wallet
+-- FOR EACH ROW
+-- BEGIN
+--     SET NEW.total_coins = NEW.free_coins + NEW.locked_coins + NEW.freeze_coins + NEW.withdrawing_coins + NEW.ipoable_coins;
+-- END;
 
 -- Create funding_wallet table
 CREATE TABLE IF NOT EXISTS funding_wallet (
@@ -53,14 +51,12 @@ CREATE TABLE IF NOT EXISTS funding_wallet (
 );
 
 -- Create trigger to calculate total_coins before insertion
-DELIMITER //
-CREATE TRIGGER before_insert_funding_wallet
-BEFORE INSERT ON funding_wallet
-FOR EACH ROW
-BEGIN
-    SET NEW.total_coins = NEW.free_coins + NEW.locked_coins + NEW.freeze_coins + NEW.withdrawing_coins;
-END //
-DELIMITER ;
+-- CREATE TRIGGER before_insert_funding_wallet
+-- BEFORE INSERT ON funding_wallet
+-- FOR EACH ROW
+-- BEGIN
+--     SET NEW.total_coins = NEW.free_coins + NEW.locked_coins + NEW.freeze_coins + NEW.withdrawing_coins;
+-- END;
 
 -- Create earn_wallet table
 CREATE TABLE IF NOT EXISTS earn_wallet (

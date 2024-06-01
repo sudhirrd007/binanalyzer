@@ -25,5 +25,14 @@ EXPOSE 80
 # Define environment variable
 ENV NAME World
 
+# Add entrypoint.sh to the image
+COPY ./binanalyzer_database/initialize_db.py .
+
+# Add entrypoint.sh to the image
+COPY ./binanalyzer_database/entrypoint.sh .
+
+# Make entrypoint.sh executable
+RUN chmod +x entrypoint.sh
+
 # command to run on container start
-CMD ["gunicorn", "main.binanalyzer_database_service:app", "-c", "config/gunicorn_config.py"]
+ENTRYPOINT ["./entrypoint.sh"]
