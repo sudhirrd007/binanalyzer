@@ -16,7 +16,7 @@ RUN ls -lt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 80 available to the world outside this container
-EXPOSE 7000
+EXPOSE 8000
 
 # Run app.py when the container launches
-CMD ["uvicorn", "main.binanalyzer_service:app", "--host", "0.0.0.0", "--port", "7000", "--reload"]
+CMD ["uvicorn", "main.binanalyzer_service:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

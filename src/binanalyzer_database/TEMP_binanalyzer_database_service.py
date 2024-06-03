@@ -6,13 +6,11 @@ import http.client
 import mysql.connector
 from mysql.connector import Error
 
-# from main.api_routes.db_wrapper import db_router
 from main.api_routes.binance_transactions_table import binance_transactions_router
 
 logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
-# app.register_blueprint(db_router)
 app.register_blueprint(binance_transactions_router)
 
 # Define your MySQL database credentials

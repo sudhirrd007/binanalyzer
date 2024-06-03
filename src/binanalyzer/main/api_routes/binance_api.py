@@ -1,4 +1,4 @@
-from main.binance_wrapper.binance_wrapper import BinanceWrapper
+from main.app.binance_api import BinanceAPI
 
 from typing import Optional, List, Any
 import logging
@@ -8,7 +8,7 @@ from typing import Annotated
 
 logging.basicConfig(level=logging.INFO)
 
-binance_api_wrapper_obj = BinanceWrapper()
+binance_api_wrapper_obj = BinanceAPI()
 
 router = APIRouter()
 
@@ -259,3 +259,22 @@ async def get_get_convert_history():
         )
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+
+# Sync Database -----------------------------------------------------------------------------------------------
+# class SyncDatabaseResponse(BaseModel):
+#     isSuccess: bool
+#     message: str
+
+
+# @router.get(
+#     "/sync_database",
+#     response_model=SyncDatabaseResponse,
+#     summary="Sync the database with the latest transactions from Binance",
+# )
+# async def sync_database():
+#     try:
+#         binance_api_wrapper_obj.sync_database()
+#         return SyncDatabaseResponse(isSuccess=True, message="Database Synced Successfully.")
+#     except Exception as e:
+#         raise HTTPException(status_code=400, detail=str(e))

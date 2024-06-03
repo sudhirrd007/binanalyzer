@@ -53,7 +53,6 @@ class BinanceTransactionsTable:
     # Endpoint
     def row_count(self):
         with CONNECTION.cursor() as cursor:
-            logging.info(">>>>> Inside row_count")
             # Execute the SELECT * query
             cursor.execute(f"SELECT COUNT(*) FROM {TABLE_NAME}")
             # Fetch all rows from the executed query
@@ -106,7 +105,6 @@ class BinanceTransactionsTable:
             )
             + " ORDER BY timestamp ASC"
         )
-        logging.info(">>>> Select Query: %s <<<", select_query)
         try:
             with CONNECTION.cursor(dictionary=True) as cursor:
                 cursor.execute(select_query)

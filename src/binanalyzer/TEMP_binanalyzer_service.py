@@ -4,6 +4,7 @@ from main.api_routes.binance_api import router as binance_router
 
 
 app = FastAPI()
+
 app.include_router(binance_router)
 
 
@@ -18,4 +19,4 @@ async def hello():
 
 
 if __name__ == "__main__":
-    uvicorn.run("binanalyzer_service:app", host="0.0.0.0", port=9000, reload=True)
+    uvicorn.run("TEMP_binanalyzer_service:app", host="0.0.0.0", port=8000, reload=True)
