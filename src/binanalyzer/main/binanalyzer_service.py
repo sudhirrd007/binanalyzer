@@ -1,10 +1,12 @@
 from fastapi import FastAPI
 import uvicorn
 from main.api_routes.binance_api import router as binance_router
+from main.api_routes.database_sync import router as database_router
 
 
 app = FastAPI()
 app.include_router(binance_router)
+app.include_router(database_router)
 
 
 @app.get("/")

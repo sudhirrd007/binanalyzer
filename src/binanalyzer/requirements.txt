@@ -3,3 +3,8 @@ uvicorn[standard]
 pandas
 requests
 binance-connector
+pydantic
+# mysql==0.0.3
+mysql-connector-python==8.4.0
+PyMySQL==1.1.1
+sqlmodel==0.0.19

@@ -207,13 +207,12 @@ def get_timestamp_offset():
     url = f"{BASE_URL}/api/v3/time"
     payload = {}
     headers = {"Content-Type": "application/json"}
-    response = requests.request("GET", url, headers=headers, data=payload, timeout=10)
+    response = requests.request("GET", url, headers=headers, data=payload, timeout=10000)
     return response.json()["serverTime"]
     # return json.loads(response.text)["serverTime"] - int(time.time() * 1000)
 
 
 def generate_signature(query_string):
-    logging.info(f"api secret: {os.getenv('BINANCE_API_SECRET')}")
     m = hmac.new(
         os.getenv("BINANCE_API_SECRET").encode("utf-8"),
         query_string.encode("utf-8"),

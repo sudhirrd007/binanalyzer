@@ -4,36 +4,29 @@ import logging
 import mysql.connector
 from mysql.connector import Error
 from .transaction import Transaction
+from sqlmodel import Field, SQLModel, create_engine, Session, select
+from sqlalchemy import text, and_
+from sqlalchemy.exc import IntegrityError
+import pymysql
 
 logging.basicConfig(level=logging.INFO)
 
 current_dir = Path(__file__).resolve().parent
 DATA_DIR = current_dir.parent.parent.joinpath("data")
 
-TABLE_NAME = "binance_transactions"
+# Set up the MySQL database connection
+host = os.getenv("MYSQL_HOST", "localhost")
+user = os.getenv("MYSQL_USER", "root")
+password = os.getenv("MYSQL_PASSWORD", "123000")
+database = os.getenv("MYSQL_DATABASE", "binanalyzer_database")
+port = os.getenv("MYSQL_PORT", "3306")
+DATABASE_URL = f"mysql+pymysql://{user}:{password}@{host}/{database}"
+
+ENGINE = create_engine(DATABASE_URL, echo=False)
 
 
-def get_connection_obj():
-    try:
-        # Establish the database connection
-        connection = mysql.connector.connect(
-            host=os.getenv("MYSQL_HOST", "localhost"),
-            user=os.getenv("MYSQL_USER", "root"),
-            password=os.getenv("MYSQL_PASSWORD", "123000"),
-            database=os.getenv("MYSQL_DATABASE", "binanalyzer_database"),
-            port=os.getenv("MYSQL_PORT", "3306"),
-        )
-        # Check if the connection is successful
-        if connection.is_connected():
-            return connection
-        else:
-            raise Exception(f"Connection failed. {str(e)}")
-    except Exception as e:
-        raise Exception(f"Connection failed. {str(e)}")
-
-
-CONNECTION = get_connection_obj()
-logging.info("CONNECTION object created")
+# Create the tables
+SQLModel.metadata.create_all(ENGINE)
 
 
 class BinanceTransactionsTable:
@@ -43,79 +36,49 @@ class BinanceTransactionsTable:
         for transaction_dict in transaction_dict_list:
             transaction_obj = Transaction(**transaction_dict)
             try:
-                self.insert_single_transaction(transaction_dict)
-            except Exception as e:
-                if "duplicate" in str(e).lower().strip():
-                    logging.warning("Duplicate record: %s", transaction_obj.order_id)
-                else:
-                    raise Exception(f"Failed- {str(e)}")
+                self.insert_single_transaction(transaction_obj)
+            except IntegrityError:
+                logging.warning(
+                    ">>> Duplicate record - order_id: %s", transaction_obj.order_id
+                )
 
-    # Endpoint
+    # # Endpoint
     def row_count(self):
-        with CONNECTION.cursor() as cursor:
-            # Execute the SELECT * query
-            cursor.execute(f"SELECT COUNT(*) FROM {TABLE_NAME}")
-            # Fetch all rows from the executed query
-            row_count = cursor.fetchone()[0]
-            logging.info(">>>>> Row count: %s", row_count)
-            return row_count
+        with Session(ENGINE) as session:
+            result = session.execute(
+                text(f"SELECT COUNT(*) FROM {Transaction.__tablename__}")
+            )
+            row_count = result.scalar()
+            return int(row_count)
 
     # Endpoint
     def select_all(self):
-        with CONNECTION.cursor(dictionary=True) as cursor:
-            # Execute the SELECT * query
-            cursor.execute(f"SELECT * FROM {TABLE_NAME}")
-            # Fetch all rows from the executed query
-            records = cursor.fetchall()
-            return records
+        with Session(ENGINE) as session:
+            statement = select(Transaction)
+            result = session.exec(statement)
+            # Convert the results to a list of dictionaries
+            return [transaction.model_dump() for transaction in result.all()]
 
     # Endpoint
-    def insert_single_transaction(self, transaction_dict: dict):
-        with CONNECTION.cursor() as cursor:
-            transaction_obj = Transaction(**transaction_dict)
-            try:
-                insert_query = transaction_obj.create_insert_query()
-                cursor.execute(insert_query)
-                CONNECTION.commit()
-                logging.info(
-                    "Record Inserted successfully: %s", transaction_obj.order_id
-                )
-            except mysql.connector.IntegrityError as e:
-                if "duplicate" in str(e).lower().strip():
-                    logging.warning("Duplicate record: %s", transaction_obj.order_id)
-                    raise Exception("Duplicate")
-                else:
-                    logging.error("Error: %s", str(e))
-                    raise Exception(f"Failed - {str(e)}")
-            except Error as e:
-                logging.error("Error: %s", e)
-                logging.error("Error Transaction dict %s", transaction_dict)
-                raise Exception(f"Failed - {str(e)}")
+    def insert_single_transaction(self, transaction_obj: Transaction):
+        with Session(ENGINE) as session:
+            session.add(transaction_obj)
+            session.commit()
 
-    # Endpoint
+    # # Endpoint
     def filter_transactions(self, filter_dict: dict):
         if not filter_dict:
             return self.select_all()
-        select_query = (
-            "SELECT * FROM "
-            + TABLE_NAME
-            + " WHERE "
-            + " AND ".join(
-                [f"{key} = LOWER('{value}')" for key, value in filter_dict.items()]
-            )
-            + " ORDER BY timestamp ASC"
-        )
-        try:
-            with CONNECTION.cursor(dictionary=True) as cursor:
-                cursor.execute(select_query)
-                records = cursor.fetchall()
-                return records
-        except Error as e:
-            logging.error("Error: %s", e)
-            raise Exception(f"Failed - {str(e)}")
-        finally:
-            if "cursor" in locals():
-                cursor.close()
+
+        with Session(ENGINE) as session:
+            # Construct the dynamic where clause
+            filter_conditions = [
+                getattr(Transaction, key) == value for key, value in filter_dict.items()
+            ]
+            statement = select(Transaction).where(and_(*filter_conditions))
+            result = session.exec(statement)
+            # Convert the results to a list of dictionaries
+            return [transaction.model_dump() for transaction in result.all()]
 
 
 def red_message(message):

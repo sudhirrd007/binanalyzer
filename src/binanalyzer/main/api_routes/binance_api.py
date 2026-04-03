@@ -259,22 +259,3 @@ async def get_get_convert_history():
         )
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
-
-
-# Sync Database -----------------------------------------------------------------------------------------------
-# class SyncDatabaseResponse(BaseModel):
-#     isSuccess: bool
-#     message: str
-
-
-# @router.get(
-#     "/sync_database",
-#     response_model=SyncDatabaseResponse,
-#     summary="Sync the database with the latest transactions from Binance",
-# )
-# async def sync_database():
-#     try:
-#         binance_api_wrapper_obj.sync_database()
-#         return SyncDatabaseResponse(isSuccess=True, message="Database Synced Successfully.")
-#     except Exception as e:
-#         raise HTTPException(status_code=400, detail=str(e))
