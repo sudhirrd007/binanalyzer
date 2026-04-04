@@ -1,4 +1,3 @@
-from pydantic import field_validator
 import logging
 from sqlmodel import Field, SQLModel
 from pydantic import field_validator

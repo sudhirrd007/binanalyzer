@@ -2,9 +2,8 @@ from main.app.binance_api import BinanceAPI
 
 from typing import Optional, List, Any
 import logging
-from pydantic import BaseModel, Field, field_validator, create_model
-from fastapi import APIRouter, HTTPException, Depends, Query, Path, Body
-from typing import Annotated
+from pydantic import BaseModel, Field, field_validator
+from fastapi import APIRouter, HTTPException, Query
 
 logging.basicConfig(level=logging.INFO)
 
@@ -78,17 +77,8 @@ async def get_coinpair_price(
         raise HTTPException(status_code=400, detail=str(e))
 
 
-# No of coins in Spot Wallet -----------------------------------------------------------------------------------------------
-class SpotCoinsResponse(BaseModel):
-    isSuccess: bool
-    free_coins: float = 0.0
-    locked_coins: float = 0.0
-    freeze_coins: float = 0.0
-    withdrawing_coins: float = 0.0
-    ipoable_coins: float = 0.0
-
-
-class SpotCoinsRequest(BaseModel):
+# Shared base for wallet requests that only need uppercase coin name
+class WalletCoinRequest(BaseModel):
     coin_name: Optional[str] = Field(
         None,
         title="coin_name",
@@ -101,6 +91,20 @@ class SpotCoinsRequest(BaseModel):
         if value is None:
             return value
         return value.upper()
+
+
+# No of coins in Spot Wallet -----------------------------------------------------------------------------------------------
+class SpotCoinsResponse(BaseModel):
+    isSuccess: bool
+    free_coins: float = 0.0
+    locked_coins: float = 0.0
+    freeze_coins: float = 0.0
+    withdrawing_coins: float = 0.0
+    ipoable_coins: float = 0.0
+
+
+class SpotCoinsRequest(WalletCoinRequest):
+    pass
 
 
 @router.get(
@@ -144,19 +148,8 @@ class FundingCoinsResponse(BaseModel):
     withdrawing_coins: float = 0.0
 
 
-class FundingCoinsRequest(BaseModel):
-    coin_name: Optional[str] = Field(
-        None,
-        title="coin_name",
-        description="Coin Name",
-        max_length=5,
-    )
-
-    @field_validator("coin_name")
-    def validate_coin_name(cls, value):
-        if value is None:
-            return value
-        return value.upper()
+class FundingCoinsRequest(WalletCoinRequest):
+    pass
 
 
 @router.get(
@@ -195,19 +188,8 @@ class EarnCoinsResponse(BaseModel):
     total_coins: float = 0.0
 
 
-class EarnCoinsRequest(BaseModel):
-    coin_name: Optional[str] = Field(
-        None,
-        title="coin_name",
-        description="Coin Name",
-        max_length=5,
-    )
-
-    @field_validator("coin_name")
-    def validate_coin_name(cls, value):
-        if value is None:
-            return value
-        return value.upper()
+class EarnCoinsRequest(WalletCoinRequest):
+    pass
 
 
 @router.get(

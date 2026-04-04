@@ -26,8 +26,10 @@ class BinanceAPI:
         spot = self.get_no_of_coin_from_spot_wallet(coin)
         funding = self.get_no_of_coin_from_funding_wallet(coin)
         flexible_earn = self.get_no_of_coin_from_earn_wallet(coin)
-        total_coins = spot + funding + flexible_earn
-        return total_coins
+        spot_free = spot["free_coins"] if spot else 0.0
+        funding_free = funding["free_coins"] if funding else 0.0
+        earn_total = flexible_earn if flexible_earn else 0.0
+        return spot_free + funding_free + earn_total
 
     def get_convert_history(
         self, start_timestamp=None, end_timestamp=None, **params_dict
@@ -71,18 +73,17 @@ class BinanceAPI:
         if start_timestamp:
             if not isinstance(start_timestamp, int):
                 if isinstance(start_timestamp, float):
-                    start_timestamp = int(start_timestamp.timestamp())
+                    start_timestamp = int(start_timestamp * 1000)
                 else:
                     raise ValueError("start_timestamp should be an int or float type")
         else:
             start_timestamp = datetime.now() - timedelta(days=45)
-            start_timestamp = start_timestamp.timestamp() * 1000 - 1000
-            start_timestamp = int(start_timestamp)
+            start_timestamp = int(start_timestamp.timestamp() * 1000 - 1000)
 
         if end_timestamp:
             if not isinstance(end_timestamp, int):
                 if isinstance(end_timestamp, float):
-                    end_timestamp = int(end_timestamp.timestamp())
+                    end_timestamp = int(end_timestamp * 1000)
                 else:
                     raise ValueError("end_timestamp should be an int or float type")
         else:
@@ -194,13 +195,12 @@ class BinanceAPI:
         result = requests.request("GET", url, headers=headers, data=payload, timeout=10)
         response = result.json()
 
-        if not response:
-            return False
-        else:
-            total_coins = 0
-            for item in response["rows"]:
-                total_coins += float(item["totalAmount"])
-            return total_coins
+        if not response or not response.get("rows"):
+            return None
+        total_coins = 0.0
+        for item in response["rows"]:
+            total_coins += float(item["totalAmount"])
+        return total_coins
 
 
 def get_timestamp_offset():

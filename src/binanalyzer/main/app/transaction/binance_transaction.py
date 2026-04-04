@@ -118,7 +118,7 @@ def validate_timestamp(timestamp):
 
     # Ensure the timestamp is 13 digits long
     if len(timestamp_str) > 13:
-        # If longer, take the right-most 13 digits (assuming the left-most digits are beyond millisecond precision)
+        # If longer, take the left-most 13 digits (drop sub-millisecond precision)
         normalized_timestamp_str = timestamp_str[:13]
     elif len(timestamp_str) < 13:
         # If shorter, pad with zeros on the left (assuming the missing digits are milliseconds)
@@ -142,6 +142,9 @@ def validate_order_status(order_status):
         "process",
         "fail",
     ]
+    if order_status is None:
+        logging.error("order_status is None")
+        raise ValueError("order_status is required")
     if order_status.strip().lower() in valid_order_statuses:
         return order_status.strip().lower()
     logging.error(f"order_status is not valid: {order_status}")
@@ -162,7 +165,7 @@ def validate_coin_coinamount_usdtequivalent_buysell(
         usdt_equivalent = float(fromAmount)
         buy_sell = True
     else:
-        print("Error: USDT not found in trans_dict")
+        logging.error(f"USDT not found in transaction: fromAsset={fromAsset}, toAsset={toAsset}")
         raise ValueError("Error: USDT not found")
     return coin, coin_amount, usdt_equivalent, buy_sell
 
@@ -176,6 +179,9 @@ def validate_trade_type(trade_type):
         "oco",
         "conversion",
     ]
+    if trade_type is None:
+        logging.error("trade_type is None")
+        raise ValueError("trade_type is required")
     if trade_type.strip().lower() in valid_trade_types:
         return trade_type.strip().lower()
     logging.error(f"trade_type is not valid: {trade_type}")

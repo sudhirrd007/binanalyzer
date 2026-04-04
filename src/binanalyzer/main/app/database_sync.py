@@ -54,6 +54,9 @@ class DatabaseSync:
 
 def fetch_binance_transactions_list():
     response = BinanceAPI().get_convert_history()
+    if not response or "list" not in response:
+        logging.warning("No transactions found in Binance convert history response")
+        return []
     return response["list"]
 
 

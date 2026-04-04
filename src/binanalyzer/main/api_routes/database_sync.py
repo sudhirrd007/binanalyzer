@@ -1,10 +1,8 @@
 from main.app.database_sync import DatabaseSync
 
-from typing import Optional, List, Any
 import logging
-from pydantic import BaseModel, Field, field_validator, create_model
-from fastapi import APIRouter, HTTPException, Depends, Query, Path, Body
-from typing import Annotated
+from pydantic import BaseModel
+from fastapi import APIRouter, HTTPException
 
 logging.basicConfig(level=logging.INFO)
 
